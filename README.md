@@ -32,6 +32,4 @@ Das Skript benötigt Python 3 und eine zusätzliche Bibliothek.
 
 ## 📝 Kontenplan
 
-[cite_start]Der verwendete Kontenplan basiert auf dem Schweizer Kontenrahmen KMU.
-
-*(Optional: Fügen Sie hier eine Liste der wichtigsten Konten oder Aliase ein, wenn Sie möchten)*
+Der verwendete Kontenplan basiert auf dem Schweizer Kontenrahmen KMU.
