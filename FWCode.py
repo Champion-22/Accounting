@@ -264,10 +264,10 @@ class AccountingGameApp:
     def __init__(self, root):
         self.root = root
         
-        # --- NEU: DPI-SKALIERUNG FÜR SCHARFE SCHRIFT ---
+        # --- DPI-SKALIERUNG FÜR SCHARFE SCHRIFT ---
         self._setup_dpi_scaling(root)
         
-        # --- NEU: BESSERER PILLOW-IMPORT-CHECK ---
+        # --- BESSERER PILLOW-IMPORT-CHECK ---
         if not PIL_AVAILABLE:
             messagebox.showerror(
                 "Fehlende Bibliothek",
@@ -564,14 +564,19 @@ class AccountingGameApp:
             self.mode_toggle_button.config(text="Modus: Klassisch (mit Zeitlimit)")
         self.restart_game() # Startet das Spiel im neuen Modus
 
+    # --- HIER IST DIE EINZIGE ÄNDERUNG ---
     def update_score_display(self):
+        """Aktualisiert die Score- und Lebens-Anzeige (mit Replit-sicheren Symbolen)."""
         live_hearts_text = "❤️" * self.lives
-        dead_hearts_text = "🖤" * (self.START_LIVES - self.lives)
+        # Ersetze "🖤" (das auf Replit oft fehlt) durch einen robusten "–" (en-dash)
+        dead_hearts_text = "–" * (self.START_LIVES - self.lives) 
         
-        self.score_label.config(text=f"Score: {self.score} | Streak: {self.streak} 🔥 | Leben: ")
+        # Ersetze "🔥" (fehlt oft) durch "★" (schwarzer Stern)
+        self.score_label.config(text=f"Score: {self.score} | Streak: {self.streak} ★ | Leben: ")
         self.live_hearts_label.config(text=live_hearts_text)
         self.dead_hearts_label.config(text=dead_hearts_text)
         self.highscore_label.config(text=f"Highscore: {self.highscore}")
+    # --- ENDE DER ÄNDERUNG ---
 
     def load_highscore(self):
         try:
