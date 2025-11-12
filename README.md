@@ -1,6 +1,6 @@
-# Buchhaltungs-Trainer Pro 🎓
+# Buchhaltungs-Trainer 🎓
 
-[Hier ein Screenshot der App einfügen]
+
 
 Eine interaktive Lernsoftware in Python, um Schweizer Buchungssätze auf spielerische Weise zu üben. [cite_start]Das Spiel basiert auf dem **Kontenrahmen KMU**  und ist als "Serious Game" konzipiert.
 
